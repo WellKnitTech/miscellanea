@@ -8,27 +8,27 @@ fileToGet=$2
 cd /tmp
 
 if [ $# -eq 0 ]
-  then
-    interface="eth0"
-	echo
-	echo "No interface specified so using eth0."
-	echo "Specify an interface with [script] [interface]."
-	echo
+	then
+		interface="eth0"
+		echo
+		echo "No interface specified so using eth0."
+		echo "Specify an interface with [script] [interface]."
+		echo
     
 fi
 
 if [ -z "$1" ]
-  then
-    interface="eth0"
+	then
+		interface="eth0"
     
 fi
 
 if [ -z "$2" ]
-  then
-	echo
-    echo "No file given. Specify with [script] [interface] [file]."
-	echo
-	exit 1
+	then
+		echo
+		echo "No file given. Specify with [script] [interface] [file]."
+		echo
+		exit 1
     
 fi
 
@@ -42,5 +42,5 @@ echo
 
 for rev in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 do
-wget $fileToGet -o /dev/null --output-document=/dev/null --background --bind-address=$address -q
+wget $fileToGet -o /dev/null --output-document=/dev/null --background --bind-address=$address
 done
