@@ -1,6 +1,6 @@
 #!/bin/bash
 #Script is called with [scriptname] [interface] [filetoget].
-#To do: timeout wget processes if left running and handle improper arguments.
+#To do: timeout wget processes if left running.
 
 #Arguments we use.
 interface=$1
