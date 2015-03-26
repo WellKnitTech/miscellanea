@@ -1,4 +1,8 @@
 #!/bin/bash
+
+#This script arose from the need to max out large circuits so that the download
+#could be monitored in iptraf.
+
 #Script is called with [scriptname] [interface] [filetoget].
 #To do: timeout wget processes if left running.
 
