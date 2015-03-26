@@ -7,6 +7,7 @@ interface=$1
 fileToGet=$2
 
 #Handle if no interface specified.
+
 if [ $# -eq 0 ]
 	then
 		interface="eth0"
@@ -21,6 +22,18 @@ if [ -z "$1" ]
 		interface="eth0"
 fi
 
+#Handle too many arguments.
+
+if [ $# -gt 2 ]
+	then
+		echo
+		echo "Too many arguments. There should only be two."
+		echo
+		exit 1
+fi
+
+
+
 #Handle no file given.
 if [ -z "$2" ]
 	then
@@ -29,6 +42,8 @@ if [ -z "$2" ]
 		echo
 		exit 1
 fi
+
+
 
 #Grab the IP of the interface specified since wget doesn't take interface names.
 address=`ifconfig $interface | grep "inet addr" | cut -d: -f2 | awk '{ print $1}'`
