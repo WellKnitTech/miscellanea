@@ -43,7 +43,7 @@ fi
 if [[ $2 != "http"* ]]
 	then
 		echo
-		echo 'You tried to download '$2'.' 
+		echo 'You tried to download '$2'.'
 		echo "This is not an http(s) file."
 		echo
 		exit 1
@@ -77,13 +77,16 @@ address=`ifconfig $interface | grep "inet addr" | cut -d: -f2 | awk '{ print $1}
 
 #General info for user.
 echo
-echo "Using $interface with $address."
+echo "Using "$interface" with "$address"."
 echo
 echo "DO NOT FORGET TO killall wget."
 echo
 
 #Time to hammer that circuit.
-for rev in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+for wgetfile in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
 	do
-		wget $fileToGet -o /dev/null --output-document=/dev/null --background --bind-address=$address
+
+
+		timeout 10 wget $fileToGet -o /dev/null --output-document=/dev/null --background --bind-address=$address
+
 done
