@@ -6,6 +6,9 @@
 interface=$1
 fileToGet=$2
 
+#Check if physical interface was added.
+phys="eth"
+
 #Handle if no interface specified.
 
 if [ $# -eq 0 ]
@@ -17,9 +20,29 @@ if [ $# -eq 0 ]
 		echo
 fi
 
-if [ -z "$1" ]
+#if [ -z "$1" ]
+#	then
+#		interface="eth0"
+#fi
+
+if [[ $1 != *"eth"* ]]
 	then
-		interface="eth0"
+		echo
+		echo 'You input '$1'.'
+		echo "This is not a physical interface!"
+		echo
+		exit 1
+fi
+
+#We should be downloading http(s) files only.
+
+if [[ $2 != "http"* ]]
+	then
+		echo
+		echo 'You tried to download '$2'.' 
+		echo "This is not an http(s) file."
+		echo
+		exit 1
 fi
 
 #Handle too many arguments.
