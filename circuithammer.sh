@@ -83,10 +83,10 @@ echo "DO NOT FORGET TO killall wget."
 echo
 
 #Time to hammer that circuit.
-for wgetfile in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+for wgetfile in {1..20}
 	do
 
 
-		timeout 10 wget $fileToGet -o /dev/null --output-document=/dev/null --background --bind-address=$address
+		wget $fileToGet -o /dev/null --output-document=/dev/null --background --bind-address=$address
 
 done
