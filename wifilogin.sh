@@ -17,6 +17,14 @@ ACTION=$2
 #Begin checks for the SSID from the config file in the home directory.
 SSID=$ssid
 ESSID=`iwgetid | cut -d ":" -f 2 | sed 's/"//g'`
+
+
+#Check for captive portal
+status=`curl -s -I http://clients3.google.com/generate_204 | grep HTTP/1.1 | awk {'print $2'}`
+if $status == "204"; then
+	exit 0
+fi
+
 #
 if [ "$INTERFACE" == `iwgetid | cut -d " " -f 1` ]; then
   if [ "$SSID" == "$ESSID" ] && [ "$ACTION" == "up" ]; then
