@@ -8,7 +8,7 @@
 last_user=`last | grep "still logged" | head -n 1 | cut -d " " -f 1`
 
 #Get the login details from the user's home directory.
-source /home/$last_user/wifi_login_details.sh
+source /home/$last_user/.wifi_login_details.sh
 
 # Network Manager sets these values
 INTERFACE=$1
