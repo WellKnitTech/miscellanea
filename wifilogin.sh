@@ -1,5 +1,5 @@
 #!/bin/bash
-#Script attempts to automatically log into the Schriener Wifi on Linux devices
+#Script attempts to automatically log into the University Wifi on Linux devices
 #Original version from user chaos on 
 #https://askubuntu.com/questions/303519/doing-something-if-connected-to-particular-ssid-in-ubuntu
 
