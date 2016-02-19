@@ -23,7 +23,7 @@ if [ "$INTERFACE" == `iwgetid | cut -d " " -f 1` ]; then
     curl -d firstname="$firstname" -d lastname="$lastname" -d email="$email" -d FNAME="1" -d button="OK" $post_url
     exit 0
   else
-    echo "Not Schreiner Wifi!"
+    echo "Not University Wifi!"
     exit 0
   fi
 fi
