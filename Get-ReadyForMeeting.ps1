@@ -250,7 +250,7 @@ if (Get-Module -ListAvailable -Name PSWindowsUpdate) {
 	Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
 	Install-Module PSWindowsUpdate
 	#Get-Command –module PSWindowsUpdate
-    write-host "Udate module installed."
+    write-host "Update module installed."
 }
 
 Write-Host "Removing old update service."
